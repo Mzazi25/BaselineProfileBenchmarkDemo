@@ -11,4 +11,4 @@ This is a simple Android app that tests performance using Baseline Profiles agai
 - `startUpForCompilationModeNone` and `scrollAndNavigateForCompilationModeNone` tests compilation without Baseline Profile
 - `startUpForCompilationModePartial` and `scrollAndNavigateForCompilationModePartial` tests compilation with Baseline Profile
 ## Results
-| ![pic](https://github.com/Mzazi25/BaselineProfileBenchmarkDemo/assets/95022986/7ca01a06-7911-472e-9993-75eeced74f68) |
+![pic](https://github.com/Mzazi25/BaselineProfileBenchmarkDemo/assets/95022986/7ca01a06-7911-472e-9993-75eeced74f68)
