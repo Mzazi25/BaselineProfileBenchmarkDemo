@@ -20,7 +20,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavType
@@ -30,6 +34,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.calebk.baselineprofilebenchmarkdemo.ui.theme.BaselineProfileBenchmarkDemoTheme
 
+@OptIn(ExperimentalComposeUiApi::class)
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,11 +48,16 @@ class MainActivity : ComponentActivity() {
                 NavHost(
                     navController = navController,
                     startDestination = "start",
+                    modifier = Modifier
+                        .semantics {
+                            testTagsAsResourceId = true
+                        }
                 ) {
                     composable("start") {
                         LazyColumn(
                             modifier = Modifier
                                 .fillMaxSize()
+                                .testTag("item_list")
                         ) {
                             item {
                                 Button(onClick = { counter++ }) {
