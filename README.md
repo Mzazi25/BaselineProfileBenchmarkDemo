@@ -1,6 +1,6 @@
 # Baseline Profile Benchmark Demo
 ## What
-This is a simple Android app that tests performance using Baseline Profiles against Normal
+This is a simple Android app that tests performance using Baseline Profiles against Normal Compilation
 ## Why
 
 - I made project in order to learn the benefits of using Baseline Profiles in an Android app/Library
