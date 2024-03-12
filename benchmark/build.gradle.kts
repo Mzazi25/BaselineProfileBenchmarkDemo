@@ -22,6 +22,13 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    testOptions.managedDevices.devices {
+        maybeCreate<com.android.build.api.dsl.ManagedVirtualDevice>("pixel3api31").apply {
+            device = "Pixel 3"
+            apiLevel = 31
+            systemImageSource = "aosp"
+        }
+    }
 
     buildTypes {
         // This benchmark buildType is used for benchmarking, and should function like your
